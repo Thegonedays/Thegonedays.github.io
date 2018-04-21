@@ -5,13 +5,13 @@
   
   <title>实验吧ctf | to be better</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##简单的后台登录   ###试题地址先看下源码，发现这个&amp;lt;!– $password=$_POST[‘password’];$sql = “SELECT * FROM admin WHERE username = ‘admin’ and password = ‘“.md5($password,true).”‘“;$result=mysqli_query($link,$sql);if(mysq">
+  <meta name="description" content="##简单的后台登录   ###试题地址先看下源码，发现这个">
 <meta name="keywords" content="ctf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实验吧ctf">
 <meta property="og:url" content="http://yoursite.com/2018/04/08/实验吧ctf/index.html">
 <meta property="og:site_name" content="to be better">
-<meta property="og:description" content="##简单的后台登录   ###试题地址先看下源码，发现这个&amp;lt;!– $password=$_POST[‘password’];$sql = “SELECT * FROM admin WHERE username = ‘admin’ and password = ‘“.md5($password,true).”‘“;$result=mysqli_query($link,$sql);if(mysq">
+<meta property="og:description" content="##简单的后台登录   ###试题地址先看下源码，发现这个">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.shiyanbar.net/UploadImage/2017/4/8/156412616523838001.png">
 <meta property="og:image" content="http://img.shiyanbar.net/UploadImage/2017/4/8/156412617283494301.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20171115220824720">
 <meta property="og:image" content="https://img-blog.csdn.net/20171115221042809">
 <meta property="og:image" content="https://img-blog.csdn.net/20171115221415094">
-<meta property="og:updated_time" content="2018-04-08T14:49:09.901Z">
+<meta property="og:updated_time" content="2018-04-21T16:25:31.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实验吧ctf">
-<meta name="twitter:description" content="##简单的后台登录   ###试题地址先看下源码，发现这个&amp;lt;!– $password=$_POST[‘password’];$sql = “SELECT * FROM admin WHERE username = ‘admin’ and password = ‘“.md5($password,true).”‘“;$result=mysqli_query($link,$sql);if(mysq">
+<meta name="twitter:description" content="##简单的后台登录   ###试题地址先看下源码，发现这个">
 <meta name="twitter:image" content="http://img.shiyanbar.net/UploadImage/2017/4/8/156412616523838001.png">
   
     <link rel="alternative" href="/atom.xml" title="to be better" type="application/atom+xml">
@@ -285,7 +285,7 @@
       
           
         <p>##简单的后台登录  </p>
-<p>###<a href="http://ctf5.shiyanbar.com/web/houtai/ffifdyop.php" target="_blank" rel="noopener">试题地址</a><br>先看下源码，发现这个<br>&lt;!– $password=$_POST[‘password’];<br>$sql = “SELECT * FROM admin WHERE username = ‘admin’ and password = ‘“.md5($password,true).”‘“;<br>$result=mysqli_query($link,$sql);<br>if(mysqli_num_rows($result)&gt;0){<br>echo ‘flag is :’.$flag;<br>}<br>else{<br>echo ‘密码错误!’;<br>}<br>url里面ffifdyop<br>getflag：flag is :flag{ffifdyop_has_trash}  </p>
+<p>###<a href="http://ctf5.shiyanbar.com/web/houtai/ffifdyop.php" target="_blank" rel="noopener">试题地址</a><br>先看下源码，发现这个<br><a id="more"></a><br>&lt;!– $password=$_POST[‘password’];<br>$sql = “SELECT * FROM admin WHERE username = ‘admin’ and password = ‘“.md5($password,true).”‘“;<br>$result=mysqli_query($link,$sql);<br>if(mysqli_num_rows($result)&gt;0){<br>echo ‘flag is :’.$flag;<br>}<br>else{<br>echo ‘密码错误!’;<br>}<br>url里面ffifdyop<br>getflag：flag is :flag{ffifdyop_has_trash}  </p>
 <p>##简单的sql注入（1）  </p>
 <p>###<a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="noopener">试题地址</a><br>一、通过加英文单引号1‘ ，检测到存在注入：   php?id=1<br><img src="http://img.shiyanbar.net/UploadImage/2017/4/8/156412616523838001.png" alt="1"><br><img src="http://img.shiyanbar.net/UploadImage/2017/4/8/156412617283494301.png" alt="2"><br>二、按常规步骤输入1 and 1=1和1 and 1=2的时候，发现报了“SQLi deteced!”而无法查询：php?1 and 1=1  php?1 and 1=2   那么，去掉空格输入1and1=1和1and1=2呢？    确定是过滤了空格！<br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412644242350201.png" alt="3"><br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412646226855101.png" alt="4"><br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412662922982301.png" alt="5"><br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412659412177401.png" alt="6"><br>三、绕过过滤空格的进行手工注入，常用一对英文括号()或者程序中常用的一对注释符/<strong>/来替代空格。<br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412686119227601.png" alt="7"><br>四、输入1/</strong>/union/<strong>/select/</strong>/flag/<strong>/from/</strong>/flag/<strong>/where/</strong>/1=1，顺利输出预期结果：<br><img src="http://img.shiyanbar.net/UploadImage/2017/4/9/156412702878251301.png" alt="8"><br>五、加单引号闭合，执行：<br>1’/<strong>/union/</strong>/select/<strong>/flag/</strong>/from/<strong>/flag/</strong>/where/**/‘1’=’1<br>flag{Y0u_@r3_5O_dAmn_90Od}  </p>
 <p>##简单的sql注入2  </p>
@@ -350,7 +350,7 @@
         <p><span>本文标题:</span><a href="/2018/04/08/实验吧ctf/">实验吧ctf</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Thegonedays 的个人博客">Thegonedays</a></p>
         <p><span>发布时间:</span>2018年04月08日 - 22时48分</p>
-        <p><span>最后更新:</span>2018年04月08日 - 22时49分</p>
+        <p><span>最后更新:</span>2018年04月22日 - 00时25分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/08/实验吧ctf/" title="实验吧ctf">http://yoursite.com/2018/04/08/实验吧ctf/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/08/实验吧ctf/　　作者: Thegonedays" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
