@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/29/images/pwd4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/29/images/pwd5.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/04/29/images/pwd6.jpg">
-<meta property="og:updated_time" content="2018-04-29T14:40:57.724Z">
+<meta property="og:updated_time" content="2018-04-29T15:58:59.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python密码学编程学习笔记">
 <meta name="twitter:description" content="#python密码学编程学习笔记 （敲字不易）">
@@ -280,10 +280,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#python密码学编程学习笔记 （敲字不易）<br><a id="more"></a></p>
+        <p>#python密码学编程学习笔记 （敲字不易）<br><img src="../images/dou.jpg" alt="d"><br><a id="more"></a></p>
 <p>##什么是密码学：<br>现代密码学所涉及的学科包括：信息论、概率论、数论、计算复杂性理论、近世代数、离散数学、代数几何学和数字逻辑等。</p>
 <p>专业术语<br>‘密钥：分为加密密钥和解密密钥。’<br>‘明文：没有进行加密，能够直接代表原文含义的信息。’<br>‘密文：经过加密处理处理之后，隐藏原文含义的信息。’<br>‘加密：将明文转换成密文的实施过程。’<br>‘解密：将密文转换成明文的实施过程’<br><code>密码算法：密码系统采用的加密方法和解密方法，随着基于数学密码技术的发展，加密方法一般称为加密算法，解密方法一般称为解密算法。</code></p>
-<p><img src="../images/dou.jpg" alt="d"></p>
 <p>直到现代以前，密码学几乎专指加密(encryption）算法：将普通信息（明文,plaintext）转换成难以理解的资料（密文,ciphertext）的过程；解密(decryption）算法则是其相反的过程：由密文转换回明文；加解密包含了这两种算法，一般加密即同时指称加密(encrypt或encipher）与解密(decrypt或decipher）的技术。<br>加解密的具体运作由两部分决定：一个是算法，另一个是密钥。密钥是一个用于加解密算法的秘密参数，通常只有通讯者拥有。历史上，密钥通常未经认证或完整性测试而被直接使用在密码机上。</p>
 <p>密码协议（cryptographic protocol）是使用密码技术的通信协议（communication protocol）。近代密码学者多认为除了传统上的加解密算法，密码协议也一样重要，两者为密码学研究的两大课题。在英文中，cryptography和cryptology都可代表密码学，前者又称密码术。但更严谨地说，前者（cryptography）指密码技术的使用，而后者（cryptology）指研究密码的学科，包含密码术与密码分析。密码分析（cryptanalysis）是研究如何破解密码学的学科。但在实际使用中，通常都称密码学（英文通常称cryptography），而不具体区分其含义。<br>口语上，编码（code）常意指加密或隐藏信息的各种方法。然而，在密码学中，编码有更特定的意义：它意指以码字（code word）取代特定的明文。例如，以‘苹果派’（apple pie）替换‘拂晓攻击’（attack at dawn）。编码已经不再被使用在严谨的密码学，它在信息论或通讯原理上有更明确的意义。<br>在汉语口语中，电脑系统或网络使用的个人帐户口令（password）也常被以密码代称，虽然口令亦属密码学研究的范围，但学术上口令与密码学中所称的钥匙（key）并不相同，即使两者间常有密切的关连。</p>
 <p>##反转加密法</p>
@@ -291,7 +290,13 @@
 <p>###2.反转加密法的原理-通过反向输出消息进行加密<br>例如：hello-&gt;加密成olleh<br>加密安全：非常弱<br>这里以一个程序实现，源码如下（倒序输出字符串）：<br><code>message = &#39;sjshdsdg&#39;</code>//密文<br><code>i = len(message) - 1</code><br><code>translated = &#39; &#39;</code><br><code>while i &gt;= 0:</code><br>    translated = translated + message[i] <code>i = i - 1</code><br><code>print(translated)</code>//明文</p>
 <p>练习题：<a href="http://invpy.com/hackingpractice5A" target="_blank" rel="noopener">http://invpy.com/hackingpractice5A</a>  </p>
 <p>##凯撒加密法<br>涉及到的python知识：<br>import语句<br>常量<br>upper（）<br>for循环<br>if，elif.else语句<br>in  not in 运算符<br>find（）</p>
-<p>叙述起来相当的麻烦因此这里借用书本上的原文<br><img src="../images/pwd1.jpg" alt="h"><br><img src="../images/pwd2.jpg" alt="o2"><br><img src="../images/pwd3.jpg" alt="o4"><br><img src="../images/pwd4.jpg" alt="he"><br><img src="../images/pwd5.jpg" alt="h"><br><img src="../images/pwd6.jpg" alt="3"></p>
+<p>叙述起来相当的麻烦因此这里借用书本上的原文</p>
+<p>####加密轮盘加密<br><img src="../images/pwd1.jpg" alt="h"><br>后续<br><img src="../images/pwd2.jpg" alt="o2"></p>
+<p>####加密轮盘解密<br><img src="../images/pwd3.jpg" alt="o4"></p>
+<p>####滑条加密<br><img src="../images/pwd4.jpg" alt="he"></p>
+<p>####不用纸质加密<br><img src="../images/pwd5.jpg" alt="h"></p>
+<p>具体</p>
+<p><img src="../images/pwd6.jpg" alt="3"></p>
 <p>主要算法：<br>加密：</p>
 <pre><code>1. 从1-25选择一个秘钥
 2. 找出明文字母的数字（A - Z 为 0-25）
@@ -368,7 +373,7 @@
         <p><span>本文标题:</span><a href="/2018/04/29/python密码学编程学习笔记/">python密码学编程学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Thegonedays 的个人博客">Thegonedays</a></p>
         <p><span>发布时间:</span>2018年04月29日 - 22时10分</p>
-        <p><span>最后更新:</span>2018年04月29日 - 22时40分</p>
+        <p><span>最后更新:</span>2018年04月29日 - 23时58分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/29/python密码学编程学习笔记/" title="python密码学编程学习笔记">http://yoursite.com/2018/04/29/python密码学编程学习笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/04/29/python密码学编程学习笔记/　　作者: Thegonedays" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
