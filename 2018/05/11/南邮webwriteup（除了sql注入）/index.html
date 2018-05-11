@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>南邮webwriteup（除了sql注入） | to be better</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#web ###1.签到题 题目地址：http://chinalover.sinaapp.com/web1/">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="南邮webwriteup（除了sql注入）">
+<meta property="og:url" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/index.html">
+<meta property="og:site_name" content="to be better">
+<meta property="og:description" content="#web ###1.签到题 题目地址：http://chinalover.sinaapp.com/web1/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/11.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/12.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/21.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/31.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/32.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/41.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/42.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/43.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/51.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/52.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/71.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/72.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/73.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/81.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/91.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/131.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/132.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/133.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/141.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/142.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/151.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/152.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/161.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/163.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/171.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/172.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/181.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/182.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/191.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/211.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/221.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/222.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/231.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/232.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/233.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/234.PNG">
+<meta property="og:updated_time" content="2018-05-11T05:44:17.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="南邮webwriteup（除了sql注入）">
+<meta name="twitter:description" content="#web ###1.签到题 题目地址：http://chinalover.sinaapp.com/web1/">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/11.PNG">
+  
+    <link rel="alternative" href="/atom.xml" title="to be better" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/hello.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Thegonedays</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/home">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Thegonedays" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/ctf/" style="font-size: 10px;">-ctf</a> <a href="/tags/ctf/" style="font-size: 10px;">ctf</a> <a href="/tags/writeup/" style="font-size: 10px;">writeup</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/渗透/" style="font-size: 10px;">渗透</a> <a href="/tags/漏洞/" style="font-size: 10px;">漏洞</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Thegonedays</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/hello.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Thegonedays</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/home">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Thegonedays" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-南邮webwriteup（除了sql注入）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/11/南邮webwriteup（除了sql注入）/" class="article-date">
+      <time datetime="2018-05-11T02:03:35.000Z" itemprop="datePublished">2018-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      南邮webwriteup（除了sql注入）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/ctf/">ctf</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/">writeup</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#web</p>
+<p>###1.签到题 题目地址：<a href="http://chinalover.sinaapp.com/web1/" target="_blank" rel="noopener">http://chinalover.sinaapp.com/web1/</a>  </p>
+<a id="more"></a>
+<p><img src="/2018/05/11/南邮webwriteup（除了sql注入）/11.PNG" alt="11"><br>直接查看源码，毕竟签到题<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/12.PNG" alt="12">  </p>
+<p>flag: nctf{flag_admiaanaaaaaaaaaaa}  </p>
+<p>###2.md5 collision 题目地址：<a href="http://chinalover.sinaapp.com/web19/" target="_blank" rel="noopener">http://chinalover.sinaapp.com/web19/</a><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/21.PNG" alt="21"><br>MD5加密QNKCDZ0–&gt;0Exxxxxxxxx</p>
+<p>== 数据的值相同即可（php弱类型）</p>
+<p>在php中==号为弱比较’0e’开头剩下的全为数字不管数字是多少==恒成立</p>
+<p>因为’0e***’==0，找一个MD5值为0e开头的字符串即可附上网址<a href="http://www.219.me/posts/2884.html" target="_blank" rel="noopener">http://www.219.me/posts/2884.html</a><br>这里将$a=s878926199a 用get提交在URL后加？$a=s878926199a即可得flag：nctf{md5_collision_is_easy}  </p>
+<p>###3.签到题呃。。题目地址：<a href="http://teamxlc.sinaapp.com/web1/02298884f0724c04293b4d8c0178615e/index.php" target="_blank" rel="noopener">http://teamxlc.sinaapp.com/web1/02298884f0724c04293b4d8c0178615e/index.php</a><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/31.PNG" alt="31"><br>从题目不难看出只要输入口令即可拿到flag</p>
+<p>输入口令发现对字数限制</p>
+<p>查看源码：<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/32.PNG" alt="32">  </p>
+<p>表单显而易见只能输10个字符，提交方式post<br>1.hackbar post提交<br>2.burp改请求头  </p>
+<p>得到flag：nctf{follow_me_to_exploit}  </p>
+<p>###4.这题不是WEB 题目地址：<a href="http://chinalover.sinaapp.com/web2/index.html" target="_blank" rel="noopener">http://chinalover.sinaapp.com/web2/index.html</a>  </p>
+<p>看见这只猫真烦人<img src="/2018/05/11/南邮webwriteup（除了sql注入）/41.PNG" alt="41"><br>原来是隐写题下载图片呃<br>两种思路：  先搜flag—&gt;无果<br>1.南邮ctf一般格式为nctf{ }<br>于是搜这个呃出来了<img src="/2018/05/11/南邮webwriteup（除了sql注入）/42.png" alt="42">  </p>
+<p>2.<img src="/2018/05/11/南邮webwriteup（除了sql注入）/43.png" alt="43">呃又学到了</p>
+<p>###5.层层递进 题目地址：<a href="http://chinalover.sinaapp.com/web3/" target="_blank" rel="noopener">http://chinalover.sinaapp.com/web3/</a><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/51.PNG" alt="51"><br>这题分不高不应难<br>查源码无果<br>只有抓包–&gt;请求头，响应头都无，岂不凉凉<br>看了writeup才知道访问的URL:<a href="http://chinalover.sinaapp.com/web3/404.html" target="_blank" rel="noopener">http://chinalover.sinaapp.com/web3/404.html</a><br>进去之后查看源码发现了如下代码：<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/52.PNG" alt="52"><br>呃flag：nctf{this_is_a_fl4g}  </p>
+<p>###6.AAencode<br>tips:javascript aaencode<br>aaencode是js加密的一种特别好玩，可以吧文字加密成表情<br>除了aaencode之外还有几种特别的加密方式</p>
+<p> Perl的ppencode<br> Ruby的rrencode</p>
+<p>我这浏览器显示乱码呃和别人writeup不一一昂<br>最后找到源码<a href="https://github.com/otakekumi/NUPT_Challenges/tree/master/WEB/AAencode" target="_blank" rel="noopener">https://github.com/otakekumi/NUPT_Challenges/tree/master/WEB/AAencode</a></p>
+<p>复制粘贴console弹出flag：nctf{javascript_aaencode}  </p>
+<p>###7.单身二十年<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/71.PNG" alt="71"><br>呃点一下：<img src="/2018/05/11/南邮webwriteup（除了sql注入）/72.PNG" alt="72"><br>抓包大法：<img src="/2018/05/11/南邮webwriteup（除了sql注入）/73.PNG" alt="73"></p>
+<p>###8.你从哪里来?呃贫僧来自东土大唐<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/81.PNG" alt="81"><br>肯定改请求头<br>refer：<a href="https://www.google.com/" target="_blank" rel="noopener">https://www.google.com/</a><br>HTTP Referer是header的一部分，当浏览器向web服务器发送请求的时候，一般会带上Referer，告诉服务器我是从哪个页面链接过来的，服务器藉此可以获得一些信息用于处理。<br>flag：nctf{http_referer}</p>
+<p>###9.php decode<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/91.PNG" alt="91"></p>
+<p>base64_decode,gzinflate,eval 3个函数不认识百度大法</p>
+<p>base64_decode+gzinflate压缩编码和解码代码方法，就是通常我们在程序中见的eval(gzinflate(base64_decode(‘加密代码’))); 形式的加密方法。针对一层加密的，我们可以直接把eval改为echo即可解密，</p>
+<p>OK–&gt;flag:nctf{gzip_base64_hhhhhh}  </p>
+<p>###10.文件包含</p>
+<p>php://filter 是一种元封装器， 设计用于数据流打开时的筛选过滤应用。<br>同时我也借此机会学到了文件读取的相关知识。</p>
+<p>include “test.php”php文件包含，在执行流中插入写在其他文件中的有用的代码。读取的时候也是数据流形式，因此可以使用php://filter进行过滤，返回值为0,1。<br> readfile(“test.php”)是将文件以数据流的形式读取过来，并不会执行，但会在前台浏览器上进行解析。返回值是字节数多少。</p>
+<p>file_get_contents(“test.php”)返回值为文本内容</p>
+<p>此题运用的就是关于数据流过滤的文件包含，我们一般在进行文件包含的时候都这么写include “test.php”获得的就是test.php直接解析出来。但如果运用readfile(“test.php”) 就不进行解析，导致无法在浏览器前台进行显示。那么问题来了看题</p>
+<p>它让我点击它 我一下子就点了他！！！<br>出来了个这个URL</p>
+<p>‘<a href="http://4.chinalover.sinaapp.com/web7/index.php?file=show.php&#39;" target="_blank" rel="noopener">http://4.chinalover.sinaapp.com/web7/index.php?file=show.php&#39;</a></p>
+<p>典型的文件包含漏洞我们可以通过构造含有漏洞的语句，查看想要看的代码<br>注解：<br>1.php://filter/可用于处理打开的数据流，起到过滤作用。如果源文件为.php则很有可能在前台显示不出来。<br>2.此时我们采用的方法是，先让文件转化为base64格式（convert.base64-encode）然后再输出，这样不论是什么格式的文件都可以在前台输出。<br>3.再次解码就可得到源代码看见了base64编码！！</p>
+<p>解码flag：nctf{edulcni_elif_lacol_si_siht}</p>
+<p>###11.单身一百年也没用<br>还是抓包：呃flag：nctf{this_is_302_redirect} </p>
+<p>###12.cookie<br>联想到抓包<br>要修改cookie<br>改成了1纯属蒙<br>flag：nctf{cookie_is_different_from_session}</p>
+<p>###13.Download~!<br>查看页面源码：<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/131.PNG" alt="131"><br>下载得到download.php代码，如下:<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/132.PNG" alt="132"><br>又发现了一个文件hereiskey.php，估计flag就在里面，果断下载<br>URL：way.nuptzj.cn/web6/download.php?url=aGVyZWlza2V5LnBocA==<br>得到flag代码：<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/133.PNG" alt="133"></p>
+<p>flag:nctf{download_any_file_666}</p>
+<p>###14.mysql<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/141.PNG" alt="141"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/142.PNG" alt="142"><br>说明id!=1024<br>$id = intval($_GET[id]);//这是前面的代码 转为整数<br>随手输了个id=1024.1<br>过了</p>
+<p>flag is:nctf{query_in_mysql}</p>
+<p>###15./x00<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/151.PNG" alt="151"></p>
+<p>百度ereg,strpos函数</p>
+<p>这里ereg有两个漏洞</p>
+<p> %00截断及遇到%00则默认为字符串的结束<br>  当ntf为数组时它的返回值不是FALSE</p>
+<p>所以有两个方法去攻这道题目<br>1.令id=1%00%23biubiubiu<br>2.令nctf为数组则，nctf[]=111</p>
+<p>附加：</p>
+<p>   === 格式也等<br>   ！== （0！==false 为true）<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/152.PNG" alt="152"></p>
+<p>flag:nctf{use_00_to_jieduan}</p>
+<p>###16.bypass again</p>
+<p><img src="/2018/05/11/南邮webwriteup（除了sql注入）/161.PNG" alt="161"><br>php弱类型<br>$_GET可以接受数组但MD5<br>md5（）不能处理数组结构的数据<br>利用此漏洞构造index.php?a[]=1&amp;b[]=2 </p>
+<p><img src="/2018/05/11/南邮webwriteup（除了sql注入）/163.PNG" alt="163"></p>
+<p>flag: nctf{php_is_so_cool}</p>
+<p>###17.变量覆盖<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/171.PNG" alt="171"><br>总的来说是extract() 函数从数组中将变量导入到当前的符号表。<br>典型的变量覆盖<br> if ($pass == $thepassword_123) { ?&gt;<br> 只需要覆盖$pass、$thepassword_123这两个变量使他们相等即可<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/172.PNG" alt="172"></p>
+<p>flag:nctf{bian_liang_fu_gai!}</p>
+<p>###18.php世界上最好的语言</p>
+<p><img src="/2018/05/11/南邮webwriteup（除了sql注入）/181.PNG" alt="181"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/182.PNG" alt="182"></p>
+<p>lag: nctf{php_is_best_language}</p>
+<p>###19.伪装者<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/191.PNG" alt="191"></p>
+<p>加x-forwarded-for:127.0.0.1<br>flag：nctf{happy_http_headers} </p>
+<p>###20.Header<br>呃<br>http头<br>flag：nctf{tips_often_hide_here}</p>
+<p>###21.passcheck<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/211.PNG" alt="211"><br>直接传pass个数组形式pass[]=1 </p>
+<p>flag:nctf{strcmp_is_n0t_3afe}</p>
+<p>###22.密码重置<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/221.PNG" alt="221"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/222.PNG" alt="222"></p>
+<p>###23.密码重置2<br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/231.PNG" alt="231"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/232.PNG" alt="232"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/233.PNG" alt="233"><br><img src="/2018/05/11/南邮webwriteup（除了sql注入）/234.PNG" alt="234"></p>
+<p>if(strlen(token)!=10)die(‘fail′);if(token!=’0’) die(‘fail’);<br>长度为十并且值为零<br>只有$token=0000000000<br>“`<br>将邮箱<a href="mailto:admin@nuptzj.cn" target="_blank" rel="noopener">admin@nuptzj.cn</a><br>密码0000000000<br>得到flag</p>
+<p>flag:nctf{thanks_to_cumt_bxs}</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/11/南邮webwriteup（除了sql注入）/">南邮webwriteup（除了sql注入）</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Thegonedays 的个人博客">Thegonedays</a></p>
+        <p><span>发布时间:</span>2018年05月11日 - 10时03分</p>
+        <p><span>最后更新:</span>2018年05月11日 - 13时44分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/11/南邮webwriteup（除了sql注入）/" title="南邮webwriteup（除了sql注入）">http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/05/11/南邮webwriteup（除了sql注入）/　　作者: Thegonedays" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/03/python密码学编程学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python密码学编程学习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'Thegonedays',
+      repo: 'Thegonedays.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/05/03/python密码学编程学习/" title="下一篇: python密码学编程学习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/南邮webwriteup（除了sql注入）/">南邮webwriteup（除了sql注入）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/python密码学编程学习/">python密码学编程学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/MSF实现永恒之蓝攻击/">MSF实现永恒之蓝攻击</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/15/ctf的web技巧/">ctf的web技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/08/实验吧ctf/">实验吧ctf</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/01/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/29/sqlmap基础教程/">sqlmap基础教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/20/github+hexo博客的搭建/">（github+hexo框架）免费博客的搭建</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Thegonedays
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
